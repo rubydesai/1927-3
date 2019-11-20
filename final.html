@@ -1,68 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-            <title>
-            Final
-            </title>
-        </meta>
-    </head>
-    <body id="myBody">
-        <button id="go">
-            GO!
-        </button>
-        <button id="turnLeft">
-            Turn Left
-        </button>
-        <button id="turnRight">
-            Turn Right
-        </button>
-        <button id="halt">
-            Halt
-        </button>
-        <script type="text/javascript">
-            //go command
-goButton = document.getElementById("go");
-goButton.addEventListener('click',go);
 
-function go(e) {
-console.log('go', e);
-//change number for bot_
-fetch('https://bot3.seattleacademy.software/drive?left=100&right=100');
-}
+<head>
+    <meta charset="utf-8">
+    <title>
+        Final
+    </title>
+    </meta>
+</head>
 
-//turn left
-turnLeftButton = document.getElementById("turnLeft");
-turnLeftButton.addEventListener('click',halt);
+<body id="myBody">
+    <button id="go">
+        GO!
+    </button>
+    <button id="turnLeft">
+        Turn Left
+    </button>
+    <button id="turnRight">
+        Turn Right
+    </button>
+    <button id="halt">
+        Halt
+    </button>
+    <script type="text/javascript">
+    //go command
+    goButton = document.getElementById("go");
+    goButton.addEventListener('click', go);
 
-function turnLeft(e) {
-console.log('halt', e);
-//change number for bot_
-fetch('https://bot3.seattleacademy.software/drive?left=-100&right=100');
-}
+    function go(e) {
+        console.log('go', e);
+        //change number for bot_
+        fetch('https://bot3.seattleacademy.software/drive?left=100&right=100');
+    }
 
-//halt
-turnRightButton = document.getElementById("turnLeft");
-turnRightButton.addEventListener('click',halt);
+    //turn left
+    turnLeftButton = document.getElementById("turnLeft");
+    turnLeftButton.addEventListener('click', halt);
 
-function halt(e) {
-console.log('halt', e);
-//change number for bot_
-fetch('https://bot3.seattleacademy.software/drive?left=0&right=0');
-}
+    function turnLeft(e) {
+        console.log('halt', e);
+        //change number for bot_
+        fetch('https://bot3.seattleacademy.software/drive?left=-100&right=100');
+    }
 
+    //halt
+    turnRightButton = document.getElementById("turnLeft");
+    turnRightButton.addEventListener('click', halt);
 
-
-myBody = document.getElementById('myBody');
-myBody.addEventListener('keydown');
+    function halt(e) {
+        console.log('halt', e);
+        //change number for bot_
+        fetch('https://bot3.seattleacademy.software/drive?left=0&right=0');
+    }
 
 
-function onkeydown(e) {
-console.log(e);
-if(e.key=="w"){
-fetch('https://bot3.seattleacademy.software/drive?left=100&right=100');
-}
-}
-        </script>
-    </body>
+
+    myBody = document.getElementById('myBody');
+    myBody.addEventListener('keydown', onkeydown);
+
+
+    function onkeydown(e) {
+        console.log(e);
+        if (e.key == "w") {
+            fetch('https://bot3.seattleacademy.software/drive?left=100&right=100');
+        }
+
+         if (e.key == " ") {
+            fetch('https://bot3.seattleacademy.software/drive?left=0&right=0');
+        }
+    }
+    </script>
+</body>
+
 </html>
