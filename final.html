@@ -11,16 +11,16 @@
 
 <body id="myBody">
     <button id="go">
-        GO!
+        Key w
     </button>
     <button id="turnLeft">
-        Turn Left
+        Key a
     </button>
     <button id="turnRight">
-        Turn Right
+        Key d
     </button>
     <button id="halt">
-        Halt
+        Space Key
     </button>
     <script type="text/javascript">
     //go command
@@ -67,6 +67,16 @@
 
          if (e.key == " ") {
             fetch('https://bot3.seattleacademy.software/drive?left=0&right=0');
+        }
+
+
+         if (e.key == "d") {
+            fetch('https://bot3.seattleacademy.software/drive?left=0&right=100');
+        }
+
+
+         if (e.key == "a") {
+            fetch('https://bot3.seattleacademy.software/drive?left=100&right=0');
         }
     }
     </script>
